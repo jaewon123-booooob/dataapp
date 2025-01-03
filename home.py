@@ -7,35 +7,18 @@ import seaborn as sns
 st.set_page_config(page_title='Home', page_icon='👀')
 
 
-df=pd.read_csv("iris.csv")
-st.write(df.head())
-fig=plt.figure(figsize=(12,4)) #그래프 사이즈 가로, 세로
-sns.lineplot(data=df, x='SepalLength', y='SepalWidth') #그래프 그리기
+st.write("# Thyroid 갑상선 데이터 웹앱 🌸")
+
+st.header("갑상선 데이터 개요 ",divider='rainbow')
 
 
+df = pd.read_csv('Thyroid_Diff.csv')
+st.markdown('''
+             
+    Thyroid.csv 데이터를 참조해 갑상선 데이터를 분석해보자. \n
+    
+    환자의 나이, 성별, 흡연 이력 등 다양한 데이터를 포함하며, 연속형 특성, 범주형 특성, 분류대상의 포인트가 있습니다.
+    이 데이터를 통해 환자 특성과 질환의 재발 여부 간의 관계를 분석하고 특성 특징이 재발 가능성에 미치는 영향을 파악합니다.
+    ''' )
 
-ck=st.checkbox('show graph')
-if ck:
-    st.pyplot(fig) # 웹 그래프 보여주기
 
-st.sidebar.title('sidebar area')
-se=st.sidebar.selectbox('text select..', ('a','b'))
-st.write('select', se)
-
-rd=st.sidebar.radio('select radio', ('SepalLength', 'SepalWidth'))
-st.dataframe(df[rd])
-
-col1, col2=st.columns([8,4])
-with col1:
-    st.header('col1')
-    st.image('cat.jpg')
-with col2:
-    st.header('col2')
-    st.image('cat.jpg')
-
-t1, t2=st.tabs(['❤ t1 label', '😍 t2 label']) #윈도우+마침표 = 이모티콘
-with t1:
-    st.header('tab1 area')
-
-with t2:
-    st.header('tab2 area')

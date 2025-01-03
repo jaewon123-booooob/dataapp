@@ -18,7 +18,7 @@ st.markdown("## 시각화 개요 \n"
 st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("### 연관성 파악을 위한 시각화 ")
 
-df = pd.read_csv('project/pages/Thyroid_Diff.csv')
+df = pd.read_csv('Thyroid_Diff.csv')
 
 dh=df.head()
 st.write(dh)

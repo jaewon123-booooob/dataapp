@@ -8,7 +8,7 @@ st.write("# Thyroid 갑상선 데이터 웹앱 🌸")
 st.header("갑상선 데이터 개요 ",divider='rainbow')
 
 
-df = pd.read_csv('평가/data/Thyroid_Diff.csv')
+df = pd.read_csv('Thyroid_Diff.csv')
 st.markdown('''
              
     Thyroid.csv 데이터를 참조해 갑상선 데이터를 분석해보자. \n
